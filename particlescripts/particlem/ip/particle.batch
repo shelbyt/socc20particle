@@ -1,0 +1,8 @@
+link s1particle add name veth0pld8 mtu 1500 type veth peer name veth0pgd0 mtu 1500
+link s2particle set dev veth0pldemo7 netns quagga
+netns particle exec quagga ip link set veth0pldemo0 master br42
+netns particle exec quagga ip link set veth0pldemo0 up
+link s5particle set dev veth0pgdemo7 address 84:17:00:00:00:07
+addr s6particle add 192.168.23.7/16 dev veth0pgdemo7
+link s7particle set veth0pgdemo7 up
+

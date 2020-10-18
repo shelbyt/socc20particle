@@ -1,0 +1,50 @@
+desc: (none)
+cmd: ip netns add valgrind
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=154884
+mem_heap_B=32816
+mem_heap_extra_B=8
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=333446
+mem_heap_B=32862
+mem_heap_extra_B=18
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=334762
+mem_heap_B=32862
+mem_heap_extra_B=18
+mem_stacks_B=0
+heap_tree=peak
+n2: 32862 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 32816 0x50FD1B8: opendir (opendir.c:247)
+  n1: 32816 0x41453C: netns_map_init (in /bin/ip)
+   n1: 32816 0x4145FC: do_netns (in /bin/ip)
+    n1: 32816 0x407282: ??? (in /bin/ip)
+     n0: 32816 0x406D70: main (in /bin/ip)
+ n0: 46 in 1 place, below massif's threshold (1.00%)
+#-----------
+snapshot=4
+#-----------
+time=334762
+mem_heap_B=46
+mem_heap_extra_B=10
+mem_stacks_B=0
+heap_tree=empty
